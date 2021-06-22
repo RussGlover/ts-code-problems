@@ -1,4 +1,4 @@
-import { hasSumPair } from "./index";
+import { hasSumPair } from "./hasSumPair";
 
 describe("hasSumPair return a boolean indicating whether or not two elements of numbers array can be added to equal sum", () => {
   test("should return true", () => {

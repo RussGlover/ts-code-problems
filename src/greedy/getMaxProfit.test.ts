@@ -1,4 +1,4 @@
-import { getMaxProfit } from "./index";
+import { getMaxProfit } from "./getMaxProfit";
 
 describe("getMaxProfit gets the max day trading profit from an array chronological stock prices", () => {
   test("it should get max profit", () => {

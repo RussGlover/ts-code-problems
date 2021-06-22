@@ -1,4 +1,4 @@
-import { BinaryTree, BinaryTreeNode } from "./index";
+import { BinaryTree, BinaryTreeNode } from "./isSuperBalanced";
 
 describe("should determine if tree has leaf nodes at depths differing by more than 1", () => {
   test("it should return true", () => {

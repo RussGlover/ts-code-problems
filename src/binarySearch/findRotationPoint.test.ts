@@ -1,4 +1,4 @@
-import { findRotationPoint } from "./index";
+import { findRotationPoint } from "./findRotationPoint";
 
 describe.only("it should find the rotation point in the semi alphabetical list", () => {
   test("should return rotation index", () => {
