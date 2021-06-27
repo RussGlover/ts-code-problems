@@ -4,6 +4,8 @@ write solutions to code problems and test them with jest
 
 ## usage
 
-A coding problem is in src/index.ts. Run the test command to run the tests with watch mode.
+Each problem is a seperate file with a corresponding test file.
 
-`npm test`
+`npm test .*fileName.test.ts` to run tests on a single file
+
+`npm run test:dev` to run tests in watch mode
