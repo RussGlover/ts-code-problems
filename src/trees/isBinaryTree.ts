@@ -1,12 +1,12 @@
 import { BinaryTree, BinaryTreeNode } from "./BinaryTree";
 
 class BinarySearchTreeNode extends BinaryTreeNode {
-    rightChildMax: number | null;
-    leftChildMin: number | null;
+    rightChildMax: number;
+    leftChildMin: number;
     constructor(
         node: BinaryTreeNode,
-        rightChildMax: number | null = null,
-        leftChildMin: number | null = null
+        rightChildMax: number = Number.POSITIVE_INFINITY,
+        leftChildMin: number = Number.NEGATIVE_INFINITY
     ) {
         super(node.value);
         this.rightChildMax = rightChildMax;
@@ -34,8 +34,8 @@ const isBinarySearchTree = (tree: BinaryTree): boolean => {
             nodeQue.push(
                 new BinarySearchTreeNode(
                     node.right,
-                    node.rightChildMax !== null ? node.rightChildMax : null,
-                    node.leftChildMin !== null ? node.leftChildMin : node.value
+                    node.rightChildMax,
+                    node.value
                 )
             );
         }
@@ -51,10 +51,8 @@ const isBinarySearchTree = (tree: BinaryTree): boolean => {
             nodeQue.push(
                 new BinarySearchTreeNode(
                     node.left,
-                    node.rightChildMax !== null
-                        ? node.rightChildMax
-                        : node.value,
-                    node.leftChildMin !== null ? node.leftChildMin : null
+                    node.value,
+                    node.leftChildMin
                 )
             );
         }
