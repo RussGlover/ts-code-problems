@@ -7,14 +7,14 @@ export class SuperBalancedBinaryTree extends BinaryTree {
         this.leafDepths = new Set();
     }
     isSuperBalanced() {
-        const nodes: Array<[BinaryTreeNode, number]> = [[this.root, 1]];
-        while (nodes.length > 0) {
-            const [node, depth] = nodes.pop() as [BinaryTreeNode, number];
+        const nodeStack: Array<[BinaryTreeNode, number]> = [[this.root, 1]];
+        while (nodeStack.length > 0) {
+            const [node, depth] = nodeStack.pop() as [BinaryTreeNode, number];
             if (node.left !== null) {
-                nodes.push([node.left, depth + 1]);
+                nodeStack.push([node.left, depth + 1]);
             }
             if (node.right !== null) {
-                nodes.push([node.right, depth + 1]);
+                nodeStack.push([node.right, depth + 1]);
             }
             if (node.right === null && node.left === null) {
                 this.leafDepths.add(depth);

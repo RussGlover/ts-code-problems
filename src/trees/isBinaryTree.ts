@@ -17,11 +17,11 @@ class BinarySearchTreeNode extends BinaryTreeNode {
 }
 
 const isBinarySearchTree = (tree: BinaryTree): boolean => {
-    const nodeQue: BinarySearchTreeNode[] = [
+    const nodeStack: BinarySearchTreeNode[] = [
         new BinarySearchTreeNode(tree.root),
     ];
-    while (nodeQue.length > 0) {
-        const node = nodeQue.pop() as BinarySearchTreeNode;
+    while (nodeStack.length > 0) {
+        const node = nodeStack.pop() as BinarySearchTreeNode;
         if (node.right !== null) {
             if (node.rightChildMax) {
                 if (node.rightChildMax <= node.right.value) {
@@ -31,7 +31,7 @@ const isBinarySearchTree = (tree: BinaryTree): boolean => {
             if (node.value > node.right.value) {
                 return false;
             }
-            nodeQue.push(
+            nodeStack.push(
                 new BinarySearchTreeNode(
                     node.right,
                     node.rightChildMax,
@@ -48,7 +48,7 @@ const isBinarySearchTree = (tree: BinaryTree): boolean => {
             if (node.value < node.left.value) {
                 return false;
             }
-            nodeQue.push(
+            nodeStack.push(
                 new BinarySearchTreeNode(
                     node.left,
                     node.value,
